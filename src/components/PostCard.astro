@@ -1,0 +1,23 @@
+---
+interface Props { title: string; description: string; slug: string; pubDate: Date; tags?: string[]; }
+const { title, description, slug, pubDate, tags } = Astro.props;
+const dateStr = new Date(pubDate).toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric' });
+---
+<article class="news-card">
+  <div class="news-meta">
+    {tags?.[0] && <span class="news-cat">{tags[0]}</span>}
+    <time>{dateStr}</time>
+  </div>
+  <h2><a href={`/blog/${slug}`}>{title}</a></h2>
+  <p>{description}</p>
+</article>
+<style>
+.news-card { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+.news-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.5rem; }
+.news-cat { background: var(--red); color: #fff; font-family: 'Roboto Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15rem 0.5rem; }
+time { font-family: 'Roboto Condensed', sans-serif; font-size: 0.8rem; color: var(--mid); }
+.news-card h2 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+.news-card h2 a { color: var(--black); }
+.news-card h2 a:hover { color: var(--red); }
+.news-card p { font-size: 0.9rem; color: var(--mid); line-height: 1.5; }
+</style>

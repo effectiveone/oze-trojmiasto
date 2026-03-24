@@ -1,0 +1,36 @@
+---
+const year = new Date().getFullYear();
+---
+<footer>
+  <div class="footer-main container">
+    <div class="f-col">
+      <h3>OZE TRÓJMIASTO</h3>
+      <p>Niezależny portal informacyjny o energii odnawialnej w Gdańsku, Gdyni i Sopocie.</p>
+    </div>
+    <div class="f-col">
+      <h4>Serwis</h4>
+      <a href="/">Strona główna</a>
+      <a href="/blog">Artykuły</a>
+    </div>
+    <div class="f-col">
+      <h4>Partnerzy</h4>
+      <a href="https://ecoaudyt.app" target="_blank">ecoaudyt.app</a>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© {year} OZE Trójmiasto · Wszelkie prawa zastrzeżone</p>
+  </div>
+</footer>
+
+<style>
+footer { background: var(--black); color: #ccc; margin-top: 3rem; }
+.footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; padding: 2.5rem 1.5rem 2rem; }
+.f-col h3 { font-family: 'Roboto Condensed', sans-serif; color: #fff; margin-bottom: 0.75rem; font-size: 1.1rem; }
+.f-col h4 { font-family: 'Roboto Condensed', sans-serif; color: var(--red-light); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; text-transform: uppercase; }
+.f-col p { font-size: 0.85rem; line-height: 1.6; }
+.f-col a { display: block; color: #aaa; font-size: 0.8rem; margin-bottom: 0.3rem; font-family: 'Roboto Condensed', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; }
+.f-col a:hover { color: var(--red-light); }
+.footer-bottom { border-top: 1px solid #333; padding: 1rem 1.5rem; text-align: center; }
+.footer-bottom p { font-size: 0.75rem; color: #666; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 0.04em; }
+@media (max-width: 600px) { .footer-main { grid-template-columns: 1fr; } }
+</style>
